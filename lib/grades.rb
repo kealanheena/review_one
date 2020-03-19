@@ -1,15 +1,22 @@
 class Grades
-  def display(grades)
-    high_grades = number_of_grades(grades, 'green')
-    medium_grades = number_of_grades(grades, 'amber')
 
-    "Green: #{high_grades} Amber: #{medium_grades} Red: 0\n#{grades}"
+  def initialize
+    @grade_levels = ['green', 'amber', 'red']
+    @grade_amounts = []
+  end
+
+  def display(input_grades)
+    number_of_grades(input_grades)
+
+    "Green: #{@grade_amounts[0]} Amber: #{@grade_amounts[1]} Red: #{@grade_amounts[2]}\n#{input_grades}"
   end
 
   private
 
-  def number_of_grades(grades, grade_level)
-    grades.split(',').count(grade_level)
+  def number_of_grades(grades)
+    @grade_levels.each { |grade| 
+      @grade_amounts << grades.split(',').count(grade)
+    }
   end
 
   # def organise_grades(grades)
