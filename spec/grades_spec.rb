@@ -8,17 +8,17 @@ describe Grades do
     end
 
     context 'when a single grade is entered' do
-      it 'should diplay "green" after all the amounts & have a count of 1 beside "Green' do
+      it 'should diplay "green" after all the amounts & have a count of 1 beside "Green"' do
         @grades = Grades.new()
         expect(@grades.display("green")).to eq("Green: 1 Amber: 0 Red: 0\ngreen")
       end
 
-      it 'should diplay "amber" after all the amounts & have a count of 1 beside "Amber' do
+      it 'should diplay "amber" after all the amounts & have a count of 1 beside "Amber"' do
         @grades = Grades.new()
         expect(@grades.display("amber")).to eq("Green: 0 Amber: 1 Red: 0\namber")
       end
 
-      it 'should diplay "red" after all the amounts & have a count of 1 beside "Red' do
+      it 'should diplay "red" after all the amounts & have a count of 1 beside "Red"' do
         @grades = Grades.new()
         expect(@grades.display("red")).to eq("Green: 0 Amber: 0 Red: 1\nred")
       end
@@ -31,7 +31,7 @@ describe Grades do
 
     it 'should diplay the "amber" grades before the "red" grades' do
       @grades = Grades.new()
-      expect(@grades.display("amber,green")).to eq("Green: 1 Amber: 1 Red: 0\ngreen\namber")
+      expect(@grades.display("red,amber")).to eq("Green: 0 Amber: 1 Red: 1\namber\nred")
     end
   end
 end
