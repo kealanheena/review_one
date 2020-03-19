@@ -28,5 +28,10 @@ describe Grades do
       @grades = Grades.new()
       expect(@grades.display("amber,green")).to eq("Green: 1 Amber: 1 Red: 0\ngreen\namber")
     end
+
+    it 'should diplay the "amber" grades before the "red" grades' do
+      @grades = Grades.new()
+      expect(@grades.display("amber,green")).to eq("Green: 1 Amber: 1 Red: 0\ngreen\namber")
+    end
   end
 end
